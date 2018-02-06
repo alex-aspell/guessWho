@@ -19,11 +19,32 @@ function onReady(){
 
 
   for(i=0; i<students.length; i++){
-    console.log('in for loop');
-    $('#generatedImages').append(`<img src ='https://github.com/${students[i].userName}.png' class = 'studentImage' data-user=(${students[i].actualName})>`);
+    $('#generatedImages').append(`<img src ='https://github.com/${students[i].userName}.png' class = 'studentImage' data-user=${students[i].actualName}>`);
   }// end for loop to generate Images
 
-
+$('#generatedImages').on('click', '.studentImage', clickOfStudentImage);
 
 
 }//end onready
+
+
+function clickOfStudentImage(){
+$('#feedback').empty();
+
+  if($(this).data('user') == students[randomNumber].actualName){
+    $('#feedback').append('Yay!');
+    $(this).animate({height: "+=100", width: "+=100"});
+    setTimeout(restartGame, 1000);
+
+  }//end if
+  else{
+    $('#feedback').append('Try Again!');
+  }
+}
+
+function restartGame(){
+var choice = confirm("Success! Would you like to play again?");
+if (choice == true){
+  location.reload();
+}
+}
