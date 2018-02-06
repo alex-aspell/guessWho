@@ -6,21 +6,24 @@ class StudentConstructor {
     this.actualName = actualName;
   }
 }
-
+let randomNumber;
 
 
 
 
 function onReady(){
 
-
-// console.log(Math.floor(Math.random() * (1 + max - min) + min));
-      // return Math.floor(Math.random() * (1 + max - min) + min);
-
 students.push(new StudentConstructor('mdgregoire', 'Michael'));
 students.push(new StudentConstructor('crouton21', 'Christiana'));
 students.push(new StudentConstructor('alex-aspell', 'Alex'));
 students.push(new StudentConstructor('tenzin1993', 'Tenzin'));
 
-console.log(students);
+randomNumber = Math.floor(Math.random()*students.length);
+console.log(randomNumber);
+console.log(students[randomNumber]);
+
+$('#randomName').text(students[randomNumber].actualName);
+
+
+
 }
