@@ -1,5 +1,5 @@
 #guesswho{
-  width: 20%;
+  width: 13%;
   float: left;
 
 }
@@ -17,4 +17,11 @@ img{
 
 #feedback{
   float: left;
+}
+
+.wrong{
+  background-color: red;
+  height: 105px;
+  width: 105px;
+
 }
