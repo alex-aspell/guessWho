@@ -7,3 +7,10 @@
   width: 22%;
   float: left;
 }
+
+img{
+  height: 100px;
+  width: 100px;
+  float: left;
+  margin: 10px
+}
