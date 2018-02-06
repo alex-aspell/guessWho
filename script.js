@@ -7,7 +7,6 @@ class StudentConstructor {
     this.actualName = actualName;
   }
 } //end student constructor
-
 function onReady(){
   students.push(new StudentConstructor('mdgregoire', 'Michael'));
   students.push(new StudentConstructor('crouton21', 'Christiana'));
@@ -36,25 +35,17 @@ function onReady(){
     $('#generatedImages').append(`<img src ='https://github.com/${students[i].userName}.png' class = 'studentImage' data-user=${students[i].actualName}>`);
   }// end for loop to generate Images
 
-$('#generatedImages').on('click', '.studentImage', clickOfStudentImage);
-
-
+  $('#generatedImages').on('click', '.studentImage', clickOfStudentImage);
 }//end onready
-
-
 function clickOfStudentImage(){
 $('#feedback').empty();
-
   if($(this).data('user') == students[randomNumber].actualName){
-    // $('#feedback').append('Yay!');
     $(this).animate({height: "+=800", width: "+=800"});
     $(this).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
     $(this).css("border-style", "solid");
     $(this).css("border-width", "10px");
     $(this).css("border-color", "lime");
-
     setTimeout(restartGame, 2000);
-
   }//end if
   else{
     $('#feedback').append('Try Again!');
@@ -64,11 +55,10 @@ $('#feedback').empty();
     $(this).css("margin", "8px");
     // $(this).addClass("wrong");
   }//end else
-}
-
+}//end click of student image
 function restartGame(){
-var choice = confirm("Success! Would you like to play again?");
-if (choice == true){
-  location.reload();
-}
-}
+  var choice = confirm("Success! Would you like to play again?");
+  if (choice == true){
+    location.reload();
+  }//end if to reload
+}// end restard game function

@@ -19,9 +19,9 @@ img{
   float: left;
 }
 
-.wrong{
-  background-color: red;
-  height: 105px;
-  width: 105px;
-
+#title{
+  width: 1000px;
+  height: 300px;
+  display: block;
+  margin-left: 12%;
 }
